@@ -16,7 +16,7 @@ public class ImBot extends TelegramLongPollingBot {
             message.setText(update.getMessage().getFrom().getFirstName() + " says \"" + update.getMessage().getText() + "\"");
             message.setChatId(update.getMessage().getChatId());
             try {
-                for (int i = 0; i < 15; i++) {
+                for (int i = 0; i < 1; i++) {
                     execute(message);
                 }
             } catch (TelegramApiException e) {
