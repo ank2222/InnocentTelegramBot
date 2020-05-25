@@ -9,11 +9,11 @@ public class ImBot extends TelegramLongPollingBot {
 
     @Override
     public void onUpdateReceived(Update update) {
-        if (update.getMessage().getText().startsWith("/")) {
+        if (update.getMessage().getText().startsWith("BOT")) {
             System.out.println(update.getMessage() + "");
             System.out.println(update);
             SendMessage message = new SendMessage();
-            message.setText(update.getMessage().getFrom().getFirstName() + " says \"" + update.getMessage().getText() + "\"");
+            message.setText(update.getMessage().getFrom().getFirstName() + "'S bhagwaan says" + update.getMessage().getText() + "\"");
             message.setChatId(update.getMessage().getChatId());
             try {
                 for (int i = 0; i < 10; i++) {
