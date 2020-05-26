@@ -9,7 +9,7 @@ public class ImBot extends TelegramLongPollingBot {
 
     @Override
     public void onUpdateReceived(Update update) {
-        if (update.getMessage().getText().startsWith("\")) {
+        if (update.getMessage().getText().startsWith("//")) {
             System.out.println(update.getMessage() + "");
             System.out.println(update);
             SendMessage message = new SendMessage();
