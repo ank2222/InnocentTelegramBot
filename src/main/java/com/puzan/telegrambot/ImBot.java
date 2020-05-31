@@ -22,11 +22,7 @@ public class ImBot extends TelegramLongPollingBot {
             } catch (Exception ex) {
                 message.setText("You guys have exceeded limit. I wont search now.");
             }
-            try {
-                execute(message);
-            } catch (Exception e0x) {
-
-            }
+            sendMessage(message);
 
         } else if (update.getMessage().getText().startsWith("//youtube ")) {
             try {
@@ -34,34 +30,38 @@ public class ImBot extends TelegramLongPollingBot {
                     message.setText(searchYoutube(update.getMessage().getText().split("//youtube")[1]));
                 else
                     message.setText("Disabled");
-                execute(message);
             } catch (Exception ex) {
                 ex.printStackTrace();
                 message.setText("Limit exceeded");
             }
+            sendMessage(message);
+
         } else if (update.getMessage().getText().startsWith("//start")) {
             if (update.getMessage().getFrom().getFirstName().startsWith("Pujan") | update.getMessage().getFrom().getFirstName().startsWith("Kyu")) {
                 enable = true;
                 message.setText("Started successfully.");
             } else
                 message.setText("You dont have permission.");
-            try {
-                execute(message);
-            } catch (Exception ex) {
 
-            }
+            sendMessage(message);
         } else if (update.getMessage().getText().startsWith("//stop")) {
             enable = false;
             message.setText("Stopped successfully");
+            sendMessage(message);
         } else if (update.getMessage().getText().startsWith("//")) {
             message.setText(update.getMessage().getFrom().getFirstName() + "'S bhagwaan says " + update.getMessage().getText() + "\"");
-            try {
-                for (int i = 0; i < 10; i++) {
-                    execute(message);
-                }
-            } catch (TelegramApiException e) {
-                e.printStackTrace();
+            for (int i = 0; i < 10; i++) {
+                sendMessage(message);
             }
+
+        }
+    }
+
+    private void sendMessage(SendMessage message) {
+        try {
+            execute(message);
+        } catch (Exception e0x) {
+
         }
     }
 
