@@ -14,7 +14,7 @@ public class MyBots {
 
 
     public static final String[] API_KEY = {
-            "AIzaSyCt7ajmvlsP7FYbtcNkzUrk3ig54k26Vi4",
+            "AIzaSyA9b2qNDp9K7L2NAcsWi_OOovQZh1423Pk",
     };
 
     public static final String[] CSE_KEY = {

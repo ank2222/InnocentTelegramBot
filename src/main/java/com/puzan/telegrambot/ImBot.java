@@ -16,16 +16,7 @@ public class ImBot extends TelegramLongPollingBot {
         SendMessage message = new SendMessage();
         message.setChatId(update.getMessage().getChatId());
 
-        if (update.getMessage().getText().startsWith("//")) {
-            message.setText(update.getMessage().getFrom().getFirstName() + "'S bhagwaan says " + update.getMessage().getText() + "\"");
-            try {
-                for (int i = 0; i < 10; i++) {
-                    execute(message);
-                }
-            } catch (TelegramApiException e) {
-                e.printStackTrace();
-            }
-        } else if (update.getMessage().getText().startsWith("//image ")) {
+        if (update.getMessage().getText().startsWith("//image ")) {
             try {
                 message.setText(searchImage(update.getMessage().getText().split("//image")[1]));
             } catch (Exception ex) {
@@ -59,6 +50,18 @@ public class ImBot extends TelegramLongPollingBot {
                 execute(message);
             } catch (Exception ex) {
 
+            }
+        } else if (update.getMessage().getText().startsWith("//stop")) {
+            enable = false;
+            message.setText("Stopped successfully");
+        } else if (update.getMessage().getText().startsWith("//")) {
+            message.setText(update.getMessage().getFrom().getFirstName() + "'S bhagwaan says " + update.getMessage().getText() + "\"");
+            try {
+                for (int i = 0; i < 10; i++) {
+                    execute(message);
+                }
+            } catch (TelegramApiException e) {
+                e.printStackTrace();
             }
         }
     }
