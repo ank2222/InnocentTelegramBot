@@ -11,4 +11,15 @@ public class MyBots {
 
     public static final String BOT_USERNAME = bachaUsername ;
     public static final String BOT_TOKEN = bachaBotToken;;
+
+
+    public static final String[] API_KEY = {
+            "AIzaSyCt7ajmvlsP7FYbtcNkzUrk3ig54k26Vi4",
+    };
+
+    public static final String[] CSE_KEY = {
+            "AIzaSyAWGNzvwlzw1GHaMiJPOy6978wRKlQq-GE",
+            "008811078831009488403:rgcfg0rlh5a"
+    };
+
 }
