@@ -21,11 +21,10 @@ public class ImBot extends TelegramLongPollingBot {
                 message.setText(searchImage(update.getMessage().getText().split("//image")[1]));
             } catch (Exception ex) {
                 message.setText("You guys have exceeded limit. I wont search now.");
-                try {
-                    execute(message);
-                } catch (Exception e0x) {
-
-                }
+            }
+            try {
+                execute(message);
+            } catch (Exception e0x) {
 
             }
 
