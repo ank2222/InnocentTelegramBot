@@ -50,7 +50,7 @@ public class ImBot extends TelegramLongPollingBot {
             sendMessage(message);
         } else if (update.getMessage().getText().startsWith("//")) {
             message.setText(update.getMessage().getFrom().getFirstName() + "'S bhagwaan says " + update.getMessage().getText() + "\"");
-            for (int i = 0; i < 10; i++) {
+            for (int i = 0; i < 1; i++) {
                 sendMessage(message);
             }
 
